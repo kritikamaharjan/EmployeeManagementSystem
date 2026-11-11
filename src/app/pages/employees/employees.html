@@ -2,6 +2,13 @@
   <h1>Employee Management</h1>
   <p>View and manage your employees.</p>
 
+  <div class="search-container">
+  <input
+    type="text"
+    placeholder="Search by name, email or department..."
+    (input)="onSearch($event)"/>
+   </div>
+
   <table>
     <thead>
       <tr>
@@ -15,7 +22,7 @@
     </thead>
 
     <tbody>
-      @for (employee of employees; track employee.id) {
+      @for (employee of filteredEmployees; track employee.id) {
         <tr>
           <td>{{ employee.id }}</td>
           <td>{{ employee.name }}</td>
@@ -25,6 +32,11 @@
           <td>{{ employee.status }}</td>
         </tr>
       }
+      @empty {
+        <tr>
+            <td colspan="6">No employees found.</td>
+        </tr>
+        }
     </tbody>
   </table>
 </div>

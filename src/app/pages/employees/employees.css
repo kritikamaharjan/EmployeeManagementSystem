@@ -34,3 +34,20 @@ th {
 td {
   color: #555;
 }
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 350px;
+  max-width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #2563eb;
+}

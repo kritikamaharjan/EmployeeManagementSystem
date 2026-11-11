@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './employees.html',
 })
 export class Employees {
+  searchTerm = '';
   employees = [
     {
       id: 1,
@@ -41,4 +42,19 @@ export class Employees {
       status: 'Active'
     }
   ];
+  
+  onSearch(event: Event) {
+  const input = event.target as HTMLInputElement;
+  this.searchTerm = input.value;
+  }
+
+  get filteredEmployees() {
+  const search = this.searchTerm.toLowerCase().trim();
+
+  return this.employees.filter(employee =>
+    employee.name.toLowerCase().includes(search) ||
+    employee.email.toLowerCase().includes(search) ||
+    employee.department.toLowerCase().includes(search)
+  );
+}
 }

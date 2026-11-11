@@ -1,0 +1,15 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.main-content {
+  background-color: #f8fafc;
+  min-height: calc(100vh - 70px);
+  overflow-x: auto;
+}
