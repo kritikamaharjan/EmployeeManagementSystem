@@ -1,0 +1,30 @@
+<div class="employees-page">
+  <h1>Employee Management</h1>
+  <p>View and manage your employees.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (employee of employees; track employee.id) {
+        <tr>
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.status }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
